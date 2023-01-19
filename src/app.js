@@ -9,5 +9,9 @@ export default class App extends LightningElement {
         this.downloadZip = true;
         this.hideUpload = true;
     }
+  goback(event) {
+        this.downloadZip = false;
+        this.hideUpload = false;
+    }
 
 }
