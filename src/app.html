@@ -1,24 +1,23 @@
 <template>
 
-	<div class="slds-text-heading_large">
-		Search for the Brand for which you want to download the images
+	<div if:false={hideUpload}>
+		<div class="slds-text-heading_large">
+			Search for the Brand for which you want to download the images
+		</div>
+
+		<lightning-input name="enter-search" label="Search and select the brand from the results" type="search"
+			class="slds-p-top_x-large slds-p-bottom_x-large">
+		</lightning-input>
+
+		<lightning-button onclick={showhide} variant="brand" label="Request Images" title="Request Images"
+			icon-name="utility:check" class="slds-m-left_x-small"></lightning-button>
 	</div>
+	<div if:true={downloadZip}>
+		<div class="slds-text-heading_large slds-p-bottom_x-large">
+			The images you requested are now ready to download.
+		</div>
 
-	<lightning-input name="enter-search" label="Search and select the brand from the results" type="search"
-		class="slds-p-top_x-large slds-p-bottom_x-large">
-	</lightning-input>
-
-	<lightning-button variant="brand" label="Request Images" title="Request Images" icon-name="utility:check"
-		class="slds-m-left_x-small"></lightning-button>
-
-	<br/><br/><br/> <br/><br/><br/>
-
-
-	<div class="slds-text-heading_large slds-p-bottom_x-large">
-		The images you requested are now ready to download.
+		<lightning-button variant="brand" label="Download" title="Download Images" icon-name="utility:download"
+			class="slds-m-left_x-small"></lightning-button>
 	</div>
-
-	<lightning-button variant="brand" label="Download" title="Download Images" icon-name="utility:download"
-		class="slds-m-left_x-small"></lightning-button>
-
 </template>
